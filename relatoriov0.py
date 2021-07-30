@@ -28,7 +28,6 @@ $( document ).ready(code_toggle);
 
 # imports e definições
 import pandas as pd
-import psycopg2
 import time
 import numpy as np
 import matplotlib.pyplot as plt
