@@ -30,16 +30,16 @@ $( document ).ready(code_toggle);
 import pandas as pd
 import time
 import numpy as np
-import matplotlib.pyplot as plt
-import seaborn as sns
+#import matplotlib.pyplot as plt
+#import seaborn as sns
 from datetime import date, timedelta
 import streamlit as st
 import math
 from PIL import Image
-import plotly.offline as py
+#import plotly.offline as py
 import plotly.express as px
-import plotly.graph_objs as go
-py.init_notebook_mode(connected=True)
+#import plotly.graph_objs as go
+#py.init_notebook_mode(connected=True)
 
 from psycopg2.extensions import register_adapter, AsIs
 def addapt_numpy_float64(numpy_float64):
