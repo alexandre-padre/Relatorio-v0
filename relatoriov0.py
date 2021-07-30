@@ -41,7 +41,7 @@ import plotly.express as px
 #import plotly.graph_objs as go
 #py.init_notebook_mode(connected=True)
 
-from psycopg2.extensions import register_adapter, AsIs
+#from psycopg2.extensions import register_adapter, AsIs
 def addapt_numpy_float64(numpy_float64):
     return AsIs(numpy_float64)
 def addapt_numpy_int64(numpy_int64):
