@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[364]:
+# In[407]:
 
 
 # imports e definições
@@ -16,7 +16,7 @@ from PIL import Image
 import plotly.express as px
 
 
-# In[365]:
+# In[408]:
 
 
 st.image('[LOGO] Eduqo.png')
@@ -31,19 +31,19 @@ st.sidebar.markdown('Feito por : Alexandre Fernandes (Padre)')
 #st.sidebar.write('[Capítulo 1](https://share.streamlit.io/alexandre-padre/relatorio-v0/main/relatoriov0_streamlit.py#cap-tulo-1)')
 
 
-# In[366]:
+# In[409]:
 
 
 st.subheader('**Capítulo 1**')
 
 
-# In[367]:
+# In[410]:
 
 
 st.subheader('**Capítulo 2: Dados brutos acerca do tempo gasto pelos usuários ativos na plataforma**')
 
 
-# In[368]:
+# In[411]:
 
 
 st.markdown('**Tópico 2.1: Alunos**')
@@ -59,7 +59,7 @@ fig1.update_layout(showlegend=False,
 st.plotly_chart(fig1)
 
 
-# In[369]:
+# In[412]:
 
 
 st.markdown('**Tópico 2.2: Professores**')
@@ -75,7 +75,7 @@ fig1.update_layout(showlegend=False,
 st.plotly_chart(fig1)
 
 
-# In[370]:
+# In[413]:
 
 
 st.markdown('**Tópico 2.3: Administradores**')
@@ -91,13 +91,13 @@ fig1.update_layout(showlegend=False,
 st.plotly_chart(fig1)
 
 
-# In[371]:
+# In[414]:
 
 
 st.subheader('**Capítulo 3: Dados brutos acerca do Banco de Questões Eduqo (Produto Banqo)**')
 
 
-# In[372]:
+# In[415]:
 
 
 st.markdown('**Tópico 3.1: Número de questões**')
@@ -113,7 +113,7 @@ fig1.update_layout(showlegend=False,
 st.plotly_chart(fig1)
 
 
-# In[373]:
+# In[416]:
 
 
 st.markdown('**Tópico 3.2: Número de questões EM**')
@@ -129,7 +129,7 @@ fig1.update_layout(showlegend=False,
 st.plotly_chart(fig1)
 
 
-# In[374]:
+# In[417]:
 
 
 st.markdown('**Tópico 3.3: Número de questões EF2**')
@@ -145,7 +145,7 @@ fig1.update_layout(showlegend=False,
 st.plotly_chart(fig1)
 
 
-# In[375]:
+# In[418]:
 
 
 st.markdown('**Tópico 3.4: Número de questões EF1**')
@@ -161,7 +161,7 @@ fig1.update_layout(showlegend=False,
 st.plotly_chart(fig1)
 
 
-# In[376]:
+# In[419]:
 
 
 st.markdown('**Tópico 3.5: Número de questões BNCC**')
@@ -177,7 +177,7 @@ fig1.update_layout(showlegend=False,
 st.plotly_chart(fig1)
 
 
-# In[377]:
+# In[420]:
 
 
 st.markdown('**Tópico 3.6: Número de questões por disciplina**')
@@ -193,7 +193,7 @@ fig1.update_layout(showlegend=False,
 st.plotly_chart(fig1)
 
 
-# In[378]:
+# In[421]:
 
 
 st.markdown('**Tópico 3.7: Número de questões por fonte**')
@@ -209,7 +209,7 @@ fig1.update_layout(showlegend=False,
 st.plotly_chart(fig1)
 
 
-# In[379]:
+# In[422]:
 
 
 st.markdown('**Tópico 3.8: Número de tags por questão**')
@@ -225,13 +225,13 @@ fig1.update_layout(showlegend=False,
 st.plotly_chart(fig1)
 
 
-# In[380]:
+# In[423]:
 
 
 st.subheader('**Capítulo 4: Dados brutos acerca das Avaliações (Produto Diagnóstiqo)**')
 
 
-# In[381]:
+# In[424]:
 
 
 st.markdown('**Tópico 4.1: Números de avaliações criadas**')
@@ -247,7 +247,7 @@ fig1.update_layout(showlegend=False,
 st.plotly_chart(fig1)
 
 
-# In[382]:
+# In[425]:
 
 
 st.markdown('**Tópico 4.2: Números de questões**')
@@ -263,7 +263,7 @@ fig1.update_layout(showlegend=True,
 st.plotly_chart(fig1)
 
 
-# In[383]:
+# In[426]:
 
 
 st.markdown('**Tópico 4.3: Engajamento médio dos alunos**')
@@ -279,7 +279,7 @@ fig1.update_layout(showlegend=False,
 st.plotly_chart(fig1)
 
 
-# In[384]:
+# In[427]:
 
 
 st.markdown('**Tópico 4.4: Tempo médio dos alunos**')
@@ -295,13 +295,13 @@ fig1.update_layout(showlegend=False,
 st.plotly_chart(fig1)
 
 
-# In[385]:
+# In[428]:
 
 
 st.subheader('**Capítulo 5: Dados brutos acerca dos cadernos (Produto Pedagógiqo)**')
 
 
-# In[386]:
+# In[429]:
 
 
 st.markdown('**Tópico 5.1: Número de cadernos criados**')
@@ -317,7 +317,7 @@ fig1.update_layout(showlegend=False,
 st.plotly_chart(fig1)
 
 
-# In[387]:
+# In[430]:
 
 
 st.markdown('**Tópico 5.2: Número de materiais nos cadernos**')
@@ -359,7 +359,7 @@ fig1.update_layout(showlegend=True,
 st.plotly_chart(fig1)
 
 
-# In[388]:
+# In[431]:
 
 
 st.markdown('**Tópico 5.3: Engajamento nos cadernos**')
@@ -401,89 +401,89 @@ fig1.update_yaxes(range=[0, 1])
 st.plotly_chart(fig1)
 
 
-# In[389]:
+# In[432]:
 
 
 st.subheader('**Capítulo 6: Benefícios QBR por namespace**')
 
 
-# In[390]:
+# In[433]:
 
 
 st.markdown('**Tópico 6.1: Benefício 1: Alunos engajados, no seu próprio ritmo e recebendo feedback em tempo real**')
 st.markdown('Item 6.1.1: Porcentagem de alunos ativos no período analisado')
 
 
-# In[391]:
+# In[434]:
 
 
 st.markdown('Item 6.1.2: Média de exercícios realizados por aluno por mês')
 
 
-# In[392]:
+# In[435]:
 
 
 st.markdown('Item 6.1.3: Média de conteúdos estudados por aluno por mês')
 
 
-# In[393]:
+# In[436]:
 
 
 st.markdown('**Tópico 6.2: Benefício 2: Professores que estão personalizando a aprendizagem**')
 st.markdown('Item 6.2.1: Porcentagem de professores ativos no período analisado')
 
 
-# In[394]:
+# In[437]:
 
 
 st.markdown('Item 6.2.2: Média de exercícios selecionados, curados ou criados por professor por mês')
 
 
-# In[395]:
+# In[438]:
 
 
 st.markdown('Item 6.2.3: Média de conteudos selecionados, curados ou criados por professor por mês')
 
 
-# In[396]:
+# In[439]:
 
 
 st.markdown('**Tópico 6.3: Benefício 3: Escola que analisa dados para personalização da aprendizagem**')
 st.markdown('Item 6.3.1: Porcentagem dos professores ativos que analisaram relatórios')
 
 
-# In[397]:
+# In[440]:
 
 
 st.markdown('Item 6.3.2: Média de relatórios analisados por professor por mês')
 
 
-# In[398]:
+# In[441]:
 
 
 st.markdown('**Tópico 6.4: Benefício 4: Escola que economiza tempo para dedicar ao mais importante: o aprendizado e crescimento dos seus alunos**')
 st.markdown('Item 6.4.1: Número de questões corrigidas automaticamente')
 
 
-# In[399]:
+# In[442]:
 
 
 st.markdown('Item 6.4.2: Número de folhas que deixaram de existir, dando menos trabalho para a sua escola')
 
 
-# In[400]:
+# In[443]:
 
 
 st.markdown('Item 6.4.3: Horas que foram economizados desde a troca de arquivos para impressão até o recolhimento de atividades e correção pelos professores')
 
 
-# In[401]:
+# In[444]:
 
 
 st.markdown('Item 6.4.4: Valor economizado com impressão e papel considerando 10 centavos por folha não impressa')
 
 
-# In[402]:
+# In[445]:
 
 
 st.markdown('**Benefícios QBR: Resultados**')
@@ -544,8 +544,8 @@ d = dict(selector="th", props=[('text-align', 'center')])
 
 beneficios_rede_filt7 = beneficios_rede_filt6.style.format({"Média":"{:,.2f}","6.1.1":"{:,.2f}","6.1.2":"{:,.2f}","6.1.3":"{:,.2f}","6.2.1":"{:,.2f}","6.2.2":"{:,.2f}","6.2.3":"{:,.2f}","6.3.1":"{:,.2f}","6.3.2":"{:,.2f}","6.4.1":"{:,.0f}","6.4.2":"{:,.0f}","6.4.3":"{:,.2f}","6.4.4":"R$ {:,.2f}"}).background_gradient(cmap='Blues')                                                    .set_properties(subset=beneficios_rede_filt6.columns[~numeric_col_mask], # right-align the numeric columns and set their width
                                                     **{'width':'10em', 'text-align':'left'})\
-                                                    .set_properties(subset=beneficios_rede_filt6.columns[numeric_col_mask], # right-align the numeric columns and set their width
-                                                    **{'width':'10em', 'text-align':'center'})
+                                                    #.set_properties(subset=beneficios_rede_filt6.columns[numeric_col_mask], # right-align the numeric columns and set their width
+                                                    #**{'width':'10em', 'text-align':'center'})
                                                     
 
 st.dataframe(beneficios_rede_filt7)
@@ -553,7 +553,7 @@ st.dataframe(beneficios_rede_filt7)
 #beneficios_rede_filt7
 
 
-# In[403]:
+# In[446]:
 
 
 st.markdown('**Benefícios QBR: Resultados normalizados pela média**')
@@ -609,8 +609,8 @@ d = dict(selector="th", props=[('text-align', 'center')])
 
 beneficios_rede_filt6_ = beneficios_rede_filt5_.style.format({"Média":"{:,.2f}","6.1.1":"{:,.2f}","6.1.2":"{:,.2f}","6.1.3":"{:,.2f}","6.2.1":"{:,.2f}","6.2.2":"{:,.2f}","6.2.3":"{:,.2f}","6.3.1":"{:,.2f}","6.3.2":"{:,.2f}","6.4.1":"{:,.0f}","6.4.2":"{:,.0f}","6.4.3":"{:,.2f}","6.4.4":"R$ {:,.2f}"}).background_gradient(cmap='Blues')                                                    .set_properties(subset=beneficios_rede_filt5_.columns[~numeric_col_mask], # right-align the numeric columns and set their width
                                                     **{'width':'10em', 'text-align':'left'})\
-                                                    .set_properties(subset=beneficios_rede_filt5_.columns[numeric_col_mask], # right-align the numeric columns and set their width
-                                                    **{'width':'10em', 'text-align':'center'})
+                                                    #.set_properties(subset=beneficios_rede_filt5_.columns[numeric_col_mask], # right-align the numeric columns and set their width
+                                                    #**{'width':'10em', 'text-align':'center'})
                                                     
 
 st.dataframe(beneficios_rede_filt6_)
@@ -618,13 +618,13 @@ st.dataframe(beneficios_rede_filt6_)
 #beneficios_rede_filt6
 
 
-# In[404]:
+# In[447]:
 
 
 st.subheader('**Capítulo 7: Benefícios QBR em Redes**')
 
 
-# In[405]:
+# In[448]:
 
 
 st.markdown('**Tópico 7.1: Redes**')
@@ -664,13 +664,13 @@ numeric_col_mask = beneficios_rede_total3.dtypes.apply(lambda d: issubclass(np.d
     
 beneficios_rede_total4 = beneficios_rede_total3.style.format({"Média":"{:,.2f}","6.1.1":"{:,.2f}","6.1.2":"{:,.2f}","6.1.3":"{:,.2f}","6.2.1":"{:,.2f}","6.2.2":"{:,.2f}","6.2.3":"{:,.2f}","6.3.1":"{:,.2f}","6.3.2":"{:,.2f}","6.4.1":"{:,.0f}","6.4.2":"{:,.0f}","6.4.3":"{:,.2f}","6.4.4":"R$ {:,.2f}"}).background_gradient(cmap='Blues')                                                    .set_properties(subset=beneficios_rede_total3.columns[~numeric_col_mask], # right-align the numeric columns and set their width
                                                     **{'width':'10em', 'text-align':'left'})\
-                                                    .set_properties(subset=beneficios_rede_total3.columns[numeric_col_mask], # right-align the numeric columns and set their width
-                                                    **{'width':'10em', 'text-align':'center'})
+                                                    #.set_properties(subset=beneficios_rede_total3.columns[numeric_col_mask], # right-align the numeric columns and set their width
+                                                    #**{'width':'10em', 'text-align':'center'})
 
 st.dataframe(beneficios_rede_total4)
 
 
-# In[406]:
+# In[449]:
 
 
 st.markdown('**Tópico 7.2: Grupos**')
@@ -722,8 +722,8 @@ numeric_col_mask = beneficios_grupo_total4.dtypes.apply(lambda d: issubclass(np.
     
 beneficios_grupo_total5 = beneficios_grupo_total4.style.format({"Média":"{:,.2f}","6.1.1":"{:,.2f}","6.1.2":"{:,.2f}","6.1.3":"{:,.2f}","6.2.1":"{:,.2f}","6.2.2":"{:,.2f}","6.2.3":"{:,.2f}","6.3.1":"{:,.2f}","6.3.2":"{:,.2f}","6.4.1":"{:,.0f}","6.4.2":"{:,.0f}","6.4.3":"{:,.2f}","6.4.4":"R$ {:,.2f}"}).background_gradient(cmap='Blues')                                                    .set_properties(subset=beneficios_grupo_total4.columns[~numeric_col_mask], # right-align the numeric columns and set their width
                                                     **{'width':'10em', 'text-align':'left'})\
-                                                    .set_properties(subset=beneficios_grupo_total4.columns[numeric_col_mask], # right-align the numeric columns and set their width
-                                                    **{'width':'10em', 'text-align':'center'})
+                                                    #.set_properties(subset=beneficios_grupo_total4.columns[numeric_col_mask], # right-align the numeric columns and set their width
+                                                    #**{'width':'10em', 'text-align':'center'})
 
 st.dataframe(beneficios_grupo_total5)
 
