@@ -852,7 +852,7 @@ beneficio1_exercicios_realizados = pd.read_excel('beneficio1_exercicios_realizad
 #beneficio1_exercicios_realizados
 
 
-# In[84]:
+# In[85]:
 
 
 beneficio1_exercicios_realizados2 = beneficio1_exercicios_realizados.drop(columns = ['Segmento','Unnamed: 0','grupo','Rede'])
@@ -866,7 +866,7 @@ beneficio1_exercicios_realizados4.rename(columns = {'sum':'Média de exercícios
 #beneficio1_exercicios_realizados4
 
 beneficio1_exercicios_realizados5 = beneficio1_exercicios_realizados4.groupby(['namespace']).mean().reset_index()
-beneficio1_exercicios_realizados5
+#beneficio1_exercicios_realizados5
 
 
 # In[53]:
@@ -879,16 +879,16 @@ beneficio1_conteudos_estudados = pd.read_excel('beneficio1_conteudos_estudados.x
 #beneficio1_conteudos_estudados
 
 
-# In[54]:
+# In[88]:
 
 
 beneficio1_conteudos_estudados2 = beneficio1_conteudos_estudados.drop(columns = ['Segmento','Unnamed: 0','grupo','Rede'])
 #beneficio1_conteudos_estudados2
 
-beneficio1_conteudos_estudados3 = beneficio1_conteudos_estudados2.groupby(['namespace','user_id','Mês']).sum().reset_index()
+beneficio1_conteudos_estudados3 = beneficio1_conteudos_estudados2.groupby(['namespace','user_id']).sum().reset_index()
 #beneficio1_conteudos_estudados3
 
-beneficio1_conteudos_estudados4 = beneficio1_conteudos_estudados3.groupby(['namespace','Mês']).mean().reset_index()
+beneficio1_conteudos_estudados4 = beneficio1_conteudos_estudados3.groupby(['namespace']).mean().reset_index()
 beneficio1_conteudos_estudados4.rename(columns = {'Nº de conteúdos':'Média de conteúdos estudados'}, inplace = True)
 #beneficio1_conteudos_estudados4
 
