@@ -23,13 +23,14 @@ $( document ).ready(code_toggle);
 <form action="javascript:code_toggle()"><input type="submit" value="Click here to toggle on/off the raw code."></form>''')
 
 
-# In[75]:
+# In[96]:
 
 
 # imports e definições
 import pandas as pd
 import time
 import numpy as np
+import matplotlib.pyplot as plt
 from datetime import date, timedelta
 import streamlit as st
 import math
@@ -906,7 +907,7 @@ beneficio2_professores_ativos = pd.read_excel('beneficio2_professores_ativos.xls
 #beneficio2_professores_ativos
 
 
-# In[56]:
+# In[95]:
 
 
 beneficio2_professores_ativos2 = beneficio2_professores_ativos.drop(columns = ['Unnamed: 0','grupo','Rede'])
@@ -922,7 +923,7 @@ beneficio2_professores_ativos5.rename(columns = {'namespace':'Namespace'}, inpla
 #beneficio2_professores_ativos5
 
 beneficio2_professores_ativos6 = beneficio2_professores_ativos5.drop(columns = ['Total de professores','Professores presentes'])
-#beneficio2_professores_ativos6
+beneficio2_professores_ativos3.dtypes
 #st.dataframe(beneficio2_professores_ativos6)
 
 
