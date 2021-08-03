@@ -23,41 +23,18 @@ $( document ).ready(code_toggle);
 <form action="javascript:code_toggle()"><input type="submit" value="Click here to toggle on/off the raw code."></form>''')
 
 
-# In[2]:
+# In[75]:
 
 
 # imports e definições
 import pandas as pd
-import psycopg2
 import time
 import numpy as np
-import matplotlib.pyplot as plt
-import seaborn as sns
 from datetime import date, timedelta
 import streamlit as st
 import math
 from PIL import Image
-import plotly.offline as py
 import plotly.express as px
-import plotly.graph_objs as go
-py.init_notebook_mode(connected=True)
-
-from psycopg2.extensions import register_adapter, AsIs
-def addapt_numpy_float64(numpy_float64):
-    return AsIs(numpy_float64)
-def addapt_numpy_int64(numpy_int64):
-    return AsIs(numpy_int64)
-def addapt_numpy_int32(numpy_int32):
-    return AsIs(numpy_int32)
-register_adapter(np.float64, addapt_numpy_float64)
-register_adapter(np.int64, addapt_numpy_int64)
-register_adapter(np.int32, addapt_numpy_int32)
-
-def retrieve_query(cursor):
-    data = []
-    for row in cursor.fetchall():
-        data.append(row)
-    return data
 
 
 # In[3]:
