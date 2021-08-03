@@ -28,21 +28,30 @@ $( document ).ready(code_toggle);
 
 # imports e definições
 import pandas as pd
+import psycopg2
 import time
 import numpy as np
-#import matplotlib.pyplot as plt
-#import seaborn as sns
+import matplotlib.pyplot as plt
+import seaborn as sns
 from datetime import date, timedelta
 import streamlit as st
 import math
 from PIL import Image
-#import plotly.offline as py
+import plotly.offline as py
 import plotly.express as px
-#import plotly.graph_objs as go
-#py.init_notebook_mode(connected=True)
+import plotly.graph_objs as go
+py.init_notebook_mode(connected=True)
 
-#from psycopg2.extensions import register_adapter, AsIs
-
+from psycopg2.extensions import register_adapter, AsIs
+def addapt_numpy_float64(numpy_float64):
+    return AsIs(numpy_float64)
+def addapt_numpy_int64(numpy_int64):
+    return AsIs(numpy_int64)
+def addapt_numpy_int32(numpy_int32):
+    return AsIs(numpy_int32)
+register_adapter(np.float64, addapt_numpy_float64)
+register_adapter(np.int64, addapt_numpy_int64)
+register_adapter(np.int32, addapt_numpy_int32)
 
 def retrieve_query(cursor):
     data = []
@@ -663,7 +672,7 @@ fig1.update_layout(showlegend=False,
 st.plotly_chart(fig1)
 
 
-# In[74]:
+# In[43]:
 
 
 numero_materiais_cadernos4 = numero_materiais_cadernos.drop(columns=['Unnamed: 0','namespace','Segmento','name','grupo','creation','id_conteudo','creation'])
@@ -718,7 +727,7 @@ fig1.update_layout(showlegend=True,
 st.plotly_chart(fig1)
 
 
-# In[ ]:
+# In[44]:
 
 
 st.markdown('**Tópico 5.3: Engajamento nos cadernos**')
@@ -730,15 +739,15 @@ engajamento_caderno_parte2 = pd.read_excel('engajamento_caderno_parte2.xlsx')
 #engajamento_caderno_parte2
 
 
-# In[ ]:
+# In[45]:
 
 
 engajamento_cadernos = engajamento_caderno_parte1.append(engajamento_caderno_parte2)
-engajamento_cadernos
+#engajamento_cadernos
 
 engajamento_cadernos_disciplina2 = engajamento_cadernos.drop(columns=['id','Total de alunos','kind','owner_id','Unnamed: 0','namespace','Segmento','name','grupo','creation','id_conteudo','creation'])
 engajamento_cadernos_disciplina3 = engajamento_cadernos_disciplina2[engajamento_cadernos_disciplina2['Engajamento'] > 0]
-engajamento_cadernos_disciplina3
+#engajamento_cadernos_disciplina3
 
 engajamento_cadernos_disciplina4 = engajamento_cadernos_disciplina3.groupby(['subject']).mean().reset_index()
 engajamento_cadernos_disciplina4.rename(columns = {'subject':'Disciplina'}, inplace = True)
@@ -755,12 +764,12 @@ fig1.update_xaxes(range=[0, 1])
 st.plotly_chart(fig1)
 
 
-# In[ ]:
+# In[46]:
 
 
 engajamento_cadernos_segmento2 = engajamento_cadernos.drop(columns=['id','Total de alunos','kind','owner_id','Unnamed: 0','namespace','subject','name','grupo','creation','id_conteudo','creation'])
 engajamento_cadernos_segmento3 = engajamento_cadernos_segmento2[engajamento_cadernos_segmento2['Engajamento'] > 0]
-engajamento_cadernos_segmento3
+#engajamento_cadernos_segmento3
 
 engajamento_cadernos_segmento4 = engajamento_cadernos_segmento3.groupby(['Segmento']).mean().reset_index()
 
@@ -785,12 +794,12 @@ fig1.update_xaxes(range=[0, 1])
 st.plotly_chart(fig1)
 
 
-# In[ ]:
+# In[47]:
 
 
 engajamento_cadernos_tipomaterial2 = engajamento_cadernos.drop(columns=['id','Total de alunos','Segmento','owner_id','Unnamed: 0','namespace','subject','name','grupo','creation','id_conteudo','creation'])
 engajamento_cadernos_tipomaterial3 = engajamento_cadernos_tipomaterial2[engajamento_cadernos_tipomaterial2['Engajamento'] > 0]
-engajamento_cadernos_tipomaterial3
+#engajamento_cadernos_tipomaterial3
 
 engajamento_cadernos_tipomaterial4 = engajamento_cadernos_tipomaterial3.groupby(['kind']).mean().reset_index()
 engajamento_cadernos_tipomaterial4.rename(columns = {'kind':'Tipo de material'}, inplace = True)
@@ -820,35 +829,405 @@ fig1.update_yaxes(range=[0, 1])
 st.plotly_chart(fig1)
 
 
-# In[47]:
+# In[48]:
 
 
 st.subheader('**Capítulo 6: QBR**')
 
 
-# In[65]:
+# In[49]:
 
 
-st.markdown('**Tópico 6.1: Benefício 1: Alunos engajados, no seu próprio ritmo e recebendo feedback em tempo real**')
+st.markdown('**Tópico 6.1.1: Benefício 1: Alunos engajados, no seu próprio ritmo e recebendo feedback em tempo real**')
+st.markdown('Porcentagem de alunos ativos no período analisado')
 
 beneficio1_alunos_ativos = pd.read_excel('beneficio1_alunos_ativos.xlsx')
 #beneficio1_alunos_ativos
 
 
-# In[73]:
+# In[50]:
 
 
 beneficio1_alunos_ativos2 = beneficio1_alunos_ativos.drop(columns = ['Segmento','Unnamed: 0','grupo','Rede'])
-beneficio1_alunos_ativos2
+#beneficio1_alunos_ativos2
 
 beneficio1_alunos_ativos3 = beneficio1_alunos_ativos2.groupby(['namespace']).sum().reset_index()
 beneficio1_alunos_ativos3 = beneficio1_alunos_ativos3[beneficio1_alunos_ativos3['Alunos presentes'] > 0] 
-beneficio1_alunos_ativos3['Porcentagem'] = beneficio1_alunos_ativos3['Alunos presentes']/beneficio1_alunos_ativos3['Total de alunos']
+beneficio1_alunos_ativos3['Porcentagem de alunos ativos'] = beneficio1_alunos_ativos3['Alunos presentes']/beneficio1_alunos_ativos3['Total de alunos']
 
-beneficio1_alunos_ativos4 = beneficio1_alunos_ativos3.sort_values(by = 'Porcentagem', ascending = False).reset_index()
+beneficio1_alunos_ativos4 = beneficio1_alunos_ativos3.sort_values(by = 'Porcentagem de alunos ativos', ascending = False).reset_index()
 beneficio1_alunos_ativos5 = beneficio1_alunos_ativos4.drop(columns = ['index'])
 beneficio1_alunos_ativos5.rename(columns = {'namespace':'Namespace'}, inplace = True)
-beneficio1_alunos_ativos5
+#beneficio1_alunos_ativos5
 
-st.dataframe(beneficio1_alunos_ativos5)
+beneficio1_alunos_ativos6 = beneficio1_alunos_ativos5.drop(columns = ['Total de alunos','Alunos presentes'])
+#beneficio1_alunos_ativos6
+#st.dataframe(beneficio1_alunos_ativos6)
+
+
+# In[51]:
+
+
+st.markdown('**Tópico 6.1.2: Benefício 1: Alunos engajados, no seu próprio ritmo e recebendo feedback em tempo real**')
+st.markdown('Média de exercícios realizados por aluno por mês')
+
+beneficio1_exercicios_realizados = pd.read_excel('beneficio1_exercicios_realizados.xlsx')
+#beneficio1_exercicios_realizados
+
+
+# In[52]:
+
+
+beneficio1_exercicios_realizados2 = beneficio1_exercicios_realizados.drop(columns = ['Segmento','Unnamed: 0','grupo','Rede'])
+#beneficio1_exercicios_realizados2
+
+beneficio1_exercicios_realizados3 = beneficio1_exercicios_realizados2.groupby(['namespace','user_id','Mês']).sum().reset_index()
+#beneficio1_exercicios_realizados3
+
+beneficio1_exercicios_realizados4 = beneficio1_exercicios_realizados3.groupby(['namespace','Mês']).mean().reset_index()
+beneficio1_exercicios_realizados4.rename(columns = {'sum':'Média de exercícios realizados'}, inplace = True)
+#beneficio1_exercicios_realizados4
+
+beneficio1_exercicios_realizados5 = beneficio1_exercicios_realizados4.groupby(['namespace']).mean().reset_index()
+#beneficio1_exercicios_realizados5
+
+
+# In[53]:
+
+
+st.markdown('**Tópico 6.1.3: Benefício 1: Alunos engajados, no seu próprio ritmo e recebendo feedback em tempo real**')
+st.markdown('Média de conteúdos estudados por aluno por mês')
+
+beneficio1_conteudos_estudados = pd.read_excel('beneficio1_conteudos_estudados.xlsx')
+#beneficio1_conteudos_estudados
+
+
+# In[54]:
+
+
+beneficio1_conteudos_estudados2 = beneficio1_conteudos_estudados.drop(columns = ['Segmento','Unnamed: 0','grupo','Rede'])
+#beneficio1_conteudos_estudados2
+
+beneficio1_conteudos_estudados3 = beneficio1_conteudos_estudados2.groupby(['namespace','user_id','Mês']).sum().reset_index()
+#beneficio1_conteudos_estudados3
+
+beneficio1_conteudos_estudados4 = beneficio1_conteudos_estudados3.groupby(['namespace','Mês']).mean().reset_index()
+beneficio1_conteudos_estudados4.rename(columns = {'Nº de conteúdos':'Média de conteúdos estudados'}, inplace = True)
+#beneficio1_conteudos_estudados4
+
+beneficio1_conteudos_estudados5 = beneficio1_conteudos_estudados4.groupby(['namespace']).mean().reset_index()
+#beneficio1_conteudos_estudados5
+
+
+# In[55]:
+
+
+st.markdown('**Tópico 6.2.1: Professores que estão personalizando a aprendizagem**')
+st.markdown('Porcentagem de professores ativos no período analisado')
+
+beneficio2_professores_ativos = pd.read_excel('beneficio2_professores_ativos.xlsx')
+#beneficio2_professores_ativos
+
+
+# In[56]:
+
+
+beneficio2_professores_ativos2 = beneficio2_professores_ativos.drop(columns = ['Unnamed: 0','grupo','Rede'])
+#beneficio2_professores_ativos2
+
+beneficio2_professores_ativos3 = beneficio2_professores_ativos2.groupby(['namespace']).sum().reset_index()
+beneficio2_professores_ativos3 = beneficio2_professores_ativos3[beneficio2_professores_ativos3['Professores presentes'] > 0] 
+beneficio2_professores_ativos3['Porcentagem de professores ativos'] = beneficio2_professores_ativos3['Professores presentes']/beneficio2_professores_ativos3['Total de professores']
+
+beneficio2_professores_ativos4 = beneficio2_professores_ativos3.sort_values(by = 'Porcentagem de professores ativos', ascending = False).reset_index()
+beneficio2_professores_ativos5 = beneficio2_professores_ativos4.drop(columns = ['index'])
+beneficio2_professores_ativos5.rename(columns = {'namespace':'Namespace'}, inplace = True)
+#beneficio2_professores_ativos5
+
+beneficio2_professores_ativos6 = beneficio2_professores_ativos5.drop(columns = ['Total de professores','Professores presentes'])
+#beneficio2_professores_ativos6
+#st.dataframe(beneficio2_professores_ativos6)
+
+
+# In[57]:
+
+
+st.markdown('**Tópico 6.2.2: Professores que estão personalizando a aprendizagem**')
+st.markdown('Média de exercícios selecionados, curados ou criados por professor por mês')
+
+beneficio2_exercicios_criados = pd.read_excel('beneficio2_exercicios_criados.xlsx')
+#beneficio2_exercicios_criados
+
+
+# In[58]:
+
+
+beneficio2_exercicios_criados2 = beneficio2_exercicios_criados.drop(columns = ['id','id_conteudo','Unnamed: 0','grupo','Rede','kind'])
+#beneficio2_exercicios_criados2
+
+beneficio2_exercicios_criados3 = beneficio2_exercicios_criados2.groupby(['namespace','user_id','Mês']).sum().reset_index()
+#beneficio2_exercicios_criados3
+
+beneficio2_exercicios_criados4 = beneficio2_exercicios_criados3.groupby(['namespace','Mês']).mean().reset_index()
+beneficio2_exercicios_criados4.rename(columns = {'Número de exercícios':'Média de exercícios criados'}, inplace = True)
+#beneficio2_exercicios_criados4
+
+beneficio2_exercicios_criados5 = beneficio2_exercicios_criados4.groupby(['namespace']).mean().reset_index()
+#beneficio2_exercicios_criados5
+
+
+# In[59]:
+
+
+st.markdown('**Tópico 6.2.3: Professores que estão personalizando a aprendizagem**')
+st.markdown('Média de conteudos selecionados, curados ou criados por professor por mês')
+
+beneficio2_conteudos_criados = pd.read_excel('beneficio2_conteudos_criados.xlsx')
+#beneficio2_conteudos_criados
+
+
+# In[60]:
+
+
+beneficio2_conteudos_criados2 = beneficio2_conteudos_criados.drop(columns = ['id_conteudo','Unnamed: 0','grupo','Rede','kind'])
+#beneficio2_conteudos_criados2
+
+beneficio2_conteudos_criados3 = beneficio2_conteudos_criados2.groupby(['namespace','user_id','Mês']).count().reset_index()
+#beneficio2_conteudos_criados3
+
+beneficio2_conteudos_criados4 = beneficio2_conteudos_criados3.groupby(['namespace','Mês']).mean().reset_index()
+beneficio2_conteudos_criados4.rename(columns = {'id':'Média de conteúdos criados'}, inplace = True)
+#beneficio2_conteudos_criados4
+
+beneficio2_conteudos_criados5 = beneficio2_conteudos_criados4.groupby(['namespace']).mean().reset_index()
+#beneficio2_conteudos_criados5
+
+
+# In[61]:
+
+
+st.markdown('**Tópico 6.3.1: Escola que analisa dados para personalização da aprendizagem**')
+st.markdown('Porcentagem dos professores ativos que analisaram relatórios')
+
+beneficio3_professores_relatorios = pd.read_excel('beneficio3_professores_relatorios.xlsx')
+#beneficio3_professores_relatorios
+
+beneficio3_professores = pd.read_excel('beneficio3_professores.xlsx')
+#beneficio3_professores
+
+
+# In[62]:
+
+
+beneficio3_professores_relatorios2 = beneficio3_professores_relatorios.drop(columns = ['Unnamed: 0','grupo','Rede','type'])
+#beneficio3_professores_relatorios2
+
+beneficio3_professores_relatorios3 = beneficio3_professores_relatorios2.groupby(['namespace','user_id']).count().reset_index()
+#beneficio3_professores_relatorios3
+
+beneficio3_professores_relatorios4 = beneficio3_professores_relatorios3.groupby(['namespace']).count().reset_index()
+beneficio3_professores_relatorios4.rename(columns = {'user_id':'Professores que viram relatórios'}, inplace = True)
+#beneficio3_professores_relatorios4
+
+beneficio3_professores_uniao = pd.merge(beneficio3_professores_relatorios4,beneficio3_professores, on  = 'namespace', how = 'outer')
+#beneficio3_professores_uniao
+
+beneficio3_professores_uniao2 = beneficio3_professores_uniao.drop(columns = {'Unnamed: 0','Rede','grupo'})
+beneficio3_professores_uniao2['Porcentagem de professores que viram relatórios'] = beneficio3_professores_uniao2['Professores que viram relatórios']/beneficio3_professores_uniao2['Nº de professores']
+beneficio3_professores_uniao3 = beneficio3_professores_uniao2.drop(columns = {'Professores que viram relatórios','Nº de professores'})
+beneficio3_professores_uniao4 = beneficio3_professores_uniao3.sort_values(by = 'Porcentagem de professores que viram relatórios',ascending = False)
+#beneficio3_professores_uniao4
+
+
+# In[63]:
+
+
+st.markdown('**Tópico 6.3.2: Escola que analisa dados para personalização da aprendizagem**')
+st.markdown('Média de relatórios analisados por professor por mês')
+
+
+# In[64]:
+
+
+beneficio3_professores_relatorios5 = beneficio3_professores_relatorios.drop(columns = ['Rede','grupo','Unnamed: 0'])
+#beneficio3_professores_relatorios5
+
+beneficio3_professores_relatorios6 = beneficio3_professores_relatorios5.groupby(['namespace','user_id']).count().reset_index()
+#beneficio3_professores_relatorios6
+
+beneficio3_professores_relatorios7 = beneficio3_professores_relatorios6.groupby(['namespace']).mean().reset_index()
+beneficio3_professores_relatorios7.rename(columns = {'type':'Média de relatórios vistos por professor'}, inplace = True)
+#beneficio3_professores_relatorios7
+
+
+# In[65]:
+
+
+st.markdown('**Tópico 6.4.1: Escola que economiza tempo para dedicar ao mais importante: o aprendizado e crescimento dos seus alunos**')
+st.markdown('Número de questões corrigidas automaticamente')
+
+beneficio4_correcao_automatica = pd.read_excel('beneficio4_correcao_automatica.xlsx')
+#beneficio4_correcao_automatica
+
+
+# In[66]:
+
+
+beneficio4_correcao_automatica2 = beneficio4_correcao_automatica.drop(columns = ['Unnamed: 0','Rede','grupo','content_id'])
+#beneficio4_correcao_automatica2
+
+beneficio4_correcao_automatica3 = beneficio4_correcao_automatica2.groupby(['namespace']).sum().reset_index()
+beneficio4_correcao_automatica3.rename(columns = {'Questões':'Nº de questões corrigidas automaticamente'}, inplace = True)
+#beneficio4_correcao_automatica3
+
+
+# In[67]:
+
+
+st.markdown('**Tópico 6.4.2: Escola que economiza tempo para dedicar ao mais importante: o aprendizado e crescimento dos seus alunos**')
+st.markdown('Número de folhas que deixaram de existir, dando menos trabalho para a sua escola')
+
+beneficio4_folhas_economizadas_pdf = pd.read_excel('beneficio4_folhas_economizadas_pdf.xlsx')
+#beneficio4_folhas_economizadas_pdf
+
+beneficio4_folhas_economizadas_doc = pd.read_excel('beneficio4_folhas_economizadas_doc.xlsx')
+#beneficio4_folhas_economizadas_doc
+
+beneficio4_folhas_economizadas_ex = pd.read_excel('beneficio4_folhas_economizadas_ex.xlsx')
+#beneficio4_folhas_economizadas_ex
+
+
+# In[68]:
+
+
+beneficio4_folhas_economizadas_aux = beneficio4_folhas_economizadas_pdf.append(beneficio4_folhas_economizadas_doc)
+beneficio4_folhas_economizadas = beneficio4_folhas_economizadas_aux.append(beneficio4_folhas_economizadas_ex)
+#beneficio4_folhas_economizadas
+
+beneficio4_folhas_economizadas2 = beneficio4_folhas_economizadas.drop(columns = ['Unnamed: 0','Rede','grupo','content_id'])
+beneficio4_folhas_economizadas3 = beneficio4_folhas_economizadas2.groupby(['namespace']).sum().reset_index()
+beneficio4_folhas_economizadas4 = beneficio4_folhas_economizadas3.sort_values(by = 'Folhas', ascending = False)
+beneficio4_folhas_economizadas4.rename(columns = {'Folhas':'Nº de folhas'}, inplace = True)
+#beneficio4_folhas_economizadas4
+
+
+# In[69]:
+
+
+st.markdown('**Tópico 6.4.3: Escola que economiza tempo para dedicar ao mais importante: o aprendizado e crescimento dos seus alunos**')
+st.markdown('Horas que foram economizados desde a troca de arquivos para impressão até o recolhimento de atividades e correção pelos professores')
+
+beneficio4_horas_economizadas = pd.read_excel('beneficio4_horas_economizadas.xlsx')
+#beneficio4_horas_economizadas
+
+
+# In[70]:
+
+
+beneficio4_horas_economizadas2 = beneficio4_horas_economizadas.drop(columns = ['Rede','grupo','Unnamed: 0'])
+#beneficio4_horas_economizadas2
+
+beneficio4_horas_economizadas3 = beneficio4_horas_economizadas2.groupby(['namespace','content_id']).sum().reset_index()
+#beneficio4_horas_economizadas3
+
+beneficio4_horas_economizadas4 = beneficio4_horas_economizadas3.groupby(['namespace']).sum().reset_index()
+beneficio4_horas_economizadas4['Segundos'] = beneficio4_horas_economizadas4['Segundos']/3600
+beneficio4_horas_economizadas4.rename(columns = {'Segundos':'Nº de Horas'}, inplace = True)
+
+beneficio4_horas_economizadas5 = beneficio4_horas_economizadas4.drop(columns = ['content_id'])
+#beneficio4_horas_economizadas5
+
+
+# In[71]:
+
+
+st.markdown('**Tópico 6.4.4: Escola que economiza tempo para dedicar ao mais importante: o aprendizado e crescimento dos seus alunos**')
+st.markdown('Valor economizado com impressão e papel considerando 10 centavos por folha não impressa')
+
+beneficio4_valor_economizado = pd.read_excel('beneficio4_valor_economizado.xlsx')
+#beneficio4_valor_economizado
+
+
+# In[72]:
+
+
+beneficio4_valor_economizado2 = beneficio4_valor_economizado.drop(columns = ['Rede','grupo','Unnamed: 0'])
+#beneficio4_valor_economizado2
+
+beneficio4_valor_economizado3 = beneficio4_valor_economizado2.groupby(['namespace','content_id']).sum().reset_index()
+#beneficio4_valor_economizado3
+
+beneficio4_valor_economizado4 = beneficio4_valor_economizado3.groupby(['namespace']).sum().reset_index()
+
+beneficio4_valor_economizado5 = beneficio4_valor_economizado4.drop(columns = ['content_id'])
+#beneficio4_valor_economizado5
+
+
+# In[73]:
+
+
+beneficio1_alunos_ativos6.rename(columns = {'Namespace':'namespace'}, inplace = True)
+#beneficio1_exercicios_realizados5
+#beneficio1_conteudos_estudados5
+beneficio2_professores_ativos6.rename(columns = {'Namespace':'namespace'}, inplace = True)
+#beneficio2_exercicios_criados5
+#beneficio2_conteudos_criados5
+#beneficio3_professores_uniao4
+#beneficio3_professores_relatorios7
+#beneficio4_correcao_automatica3
+#beneficio4_folhas_economizadas4
+#beneficio4_horas_economizadas5
+#beneficio4_valor_economizado5
+
+join1 = pd.merge(beneficio1_alunos_ativos6,beneficio1_exercicios_realizados5, on = 'namespace', how = 'outer')
+join2 = pd.merge(beneficio1_conteudos_estudados5,beneficio2_professores_ativos6, on = 'namespace', how = 'outer')
+join3 = pd.merge(beneficio2_exercicios_criados5,beneficio2_conteudos_criados5, on = 'namespace', how = 'outer')
+join4 = pd.merge(beneficio3_professores_uniao4,beneficio3_professores_relatorios7, on = 'namespace', how = 'outer')
+join5 = pd.merge(beneficio4_correcao_automatica3,beneficio4_folhas_economizadas4, on = 'namespace', how = 'outer')
+join6 = pd.merge(beneficio4_horas_economizadas5,beneficio4_valor_economizado5, on = 'namespace', how = 'outer')
+
+join7 = pd.merge(join1,join2, on = 'namespace', how = 'outer')
+join8 = pd.merge(join3,join4, on = 'namespace', how = 'outer')
+join9 = pd.merge(join5,join6, on = 'namespace', how = 'outer')
+
+join10 = pd.merge(join7,join8, on = 'namespace', how = 'outer')
+
+join11 = pd.merge(join9,join10, on = 'namespace', how = 'outer')
+#join11
+
+join11 = join11[['namespace','Porcentagem de alunos ativos','Média de exercícios realizados','Média de conteúdos estudados','Porcentagem de professores ativos','Média de exercícios criados','Média de conteúdos criados','Porcentagem de professores que viram relatórios','Média de relatórios vistos por professor','Nº de questões corrigidas automaticamente','Nº de folhas','Nº de Horas','Reais']]
+join11.rename(columns = {'Nº de questões corrigidas automaticamente':'Número de questões corrigidas automaticamente'}, inplace = True)
+join11.rename(columns = {'Nº de folhas':'Número de folhas que deixaram de existir'}, inplace = True)
+join11.rename(columns = {'Nº de Horas':'Horas que foram economizados'}, inplace = True)
+join11.rename(columns = {'Reais':'Valor economizado com impressão e papel'}, inplace = True)
+join11 = join11.dropna(how = 'all')
+join11 = join11.dropna(thresh=4)
+#join11
+beneficios_qbr = join11
+
+beneficios_qbr2 = beneficios_qbr.fillna(0)
+
+beneficios_qbr3 = beneficios_qbr2.style.format({"Média":"{:,.2f}","Porcentagem de alunos ativos":"{:,.2f}","Média de exercícios realizados":"{:,.2f}","Média de conteúdos estudados":"{:,.2f}","Porcentagem de professores ativos":"{:,.2f}","Média de exercícios criados":"{:,.2f}","Média de conteúdos criados":"{:,.2f}","Porcentagem de professores que viram relatórios":"{:,.2f}","Média de relatórios vistos por professor":"{:,.2f}","Número de questões corrigidas automaticamente":"{:,.0f}","Número de folhas que deixaram de existir":"{:,.0f}","Horas que foram economizados":"{:,.2f}","Valor economizado com impressão e papel":"R$ {:,.2f}"}).background_gradient(cmap='Greens')
+
+st.dataframe(beneficios_qbr3)
+
+beneficios_qbr_normalizado = pd.DataFrame()
+for coluna in beneficios_qbr:
+    if coluna != 'namespace':
+        beneficios_qbr_normalizado[coluna] = beneficios_qbr[coluna]/beneficios_qbr[coluna].mean()
+    if coluna == 'namespace':
+        beneficios_qbr_normalizado[coluna] = beneficios_qbr[coluna]
+
+col = beneficios_qbr_normalizado.loc[:,"Porcentagem de alunos ativos":"Valor economizado com impressão e papel"]
+beneficios_qbr_normalizado['Média'] = col.mean(axis = 1)
+beneficios_qbr_normalizado2 = beneficios_qbr_normalizado.sort_values(by = 'Média', ascending = False)
+
+beneficios_qbr_normalizado3 = beneficios_qbr_normalizado2.fillna(0)
+#beneficios_qbr_normalizado3
+
+beneficios_qbr_normalizado4 = beneficios_qbr_normalizado3.style.format({"Média":"{:,.2f}","Porcentagem de alunos ativos":"{:,.2f}","Média de exercícios realizados":"{:,.2f}","Média de conteúdos estudados":"{:,.2f}","Porcentagem de professores ativos":"{:,.2f}","Média de exercícios criados":"{:,.2f}","Média de conteúdos criados":"{:,.2f}","Porcentagem de professores que viram relatórios":"{:,.2f}","Média de relatórios vistos por professor":"{:,.2f}","Número de questões corrigidas automaticamente":"{:,.0f}","Número de folhas que deixaram de existir":"{:,.0f}","Horas que foram economizados":"{:,.2f}","Valor economizado com impressão e papel":"R$ {:,.2f}"}).background_gradient(cmap='Greens')
+#beneficios_qbr_normalizado3
+st.dataframe(beneficios_qbr_normalizado4)
+
+#beneficios_qbr3
 
