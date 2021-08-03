@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[46]:
+# In[364]:
 
 
 # imports e definições
@@ -16,7 +16,7 @@ from PIL import Image
 import plotly.express as px
 
 
-# In[102]:
+# In[365]:
 
 
 st.image('[LOGO] Eduqo.png')
@@ -28,22 +28,22 @@ st.sidebar.image(image,caption='Eduqo - Plataforma QMágico',use_column_width=Tr
 
 st.sidebar.markdown('Feito por : Alexandre Fernandes (Padre)')
 
-st.sidebar.write('[Capítulo 1](https://share.streamlit.io/alexandre-padre/relatorio-v0/main/relatoriov0_streamlit.py#cap-tulo-1)')
+#st.sidebar.write('[Capítulo 1](https://share.streamlit.io/alexandre-padre/relatorio-v0/main/relatoriov0_streamlit.py#cap-tulo-1)')
 
 
-# In[48]:
+# In[366]:
 
 
 st.subheader('**Capítulo 1**')
 
 
-# In[49]:
+# In[367]:
 
 
 st.subheader('**Capítulo 2: Dados brutos acerca do tempo gasto pelos usuários ativos na plataforma**')
 
 
-# In[50]:
+# In[368]:
 
 
 st.markdown('**Tópico 2.1: Alunos**')
@@ -59,7 +59,7 @@ fig1.update_layout(showlegend=False,
 st.plotly_chart(fig1)
 
 
-# In[51]:
+# In[369]:
 
 
 st.markdown('**Tópico 2.2: Professores**')
@@ -75,7 +75,7 @@ fig1.update_layout(showlegend=False,
 st.plotly_chart(fig1)
 
 
-# In[52]:
+# In[370]:
 
 
 st.markdown('**Tópico 2.3: Administradores**')
@@ -91,13 +91,13 @@ fig1.update_layout(showlegend=False,
 st.plotly_chart(fig1)
 
 
-# In[53]:
+# In[371]:
 
 
 st.subheader('**Capítulo 3: Dados brutos acerca do Banco de Questões Eduqo (Produto Banqo)**')
 
 
-# In[54]:
+# In[372]:
 
 
 st.markdown('**Tópico 3.1: Número de questões**')
@@ -113,7 +113,7 @@ fig1.update_layout(showlegend=False,
 st.plotly_chart(fig1)
 
 
-# In[55]:
+# In[373]:
 
 
 st.markdown('**Tópico 3.2: Número de questões EM**')
@@ -129,7 +129,7 @@ fig1.update_layout(showlegend=False,
 st.plotly_chart(fig1)
 
 
-# In[56]:
+# In[374]:
 
 
 st.markdown('**Tópico 3.3: Número de questões EF2**')
@@ -145,7 +145,7 @@ fig1.update_layout(showlegend=False,
 st.plotly_chart(fig1)
 
 
-# In[57]:
+# In[375]:
 
 
 st.markdown('**Tópico 3.4: Número de questões EF1**')
@@ -161,7 +161,7 @@ fig1.update_layout(showlegend=False,
 st.plotly_chart(fig1)
 
 
-# In[58]:
+# In[376]:
 
 
 st.markdown('**Tópico 3.5: Número de questões BNCC**')
@@ -177,7 +177,7 @@ fig1.update_layout(showlegend=False,
 st.plotly_chart(fig1)
 
 
-# In[59]:
+# In[377]:
 
 
 st.markdown('**Tópico 3.6: Número de questões por disciplina**')
@@ -193,7 +193,7 @@ fig1.update_layout(showlegend=False,
 st.plotly_chart(fig1)
 
 
-# In[60]:
+# In[378]:
 
 
 st.markdown('**Tópico 3.7: Número de questões por fonte**')
@@ -209,7 +209,7 @@ fig1.update_layout(showlegend=False,
 st.plotly_chart(fig1)
 
 
-# In[61]:
+# In[379]:
 
 
 st.markdown('**Tópico 3.8: Número de tags por questão**')
@@ -225,13 +225,13 @@ fig1.update_layout(showlegend=False,
 st.plotly_chart(fig1)
 
 
-# In[62]:
+# In[380]:
 
 
 st.subheader('**Capítulo 4: Dados brutos acerca das Avaliações (Produto Diagnóstiqo)**')
 
 
-# In[63]:
+# In[381]:
 
 
 st.markdown('**Tópico 4.1: Números de avaliações criadas**')
@@ -247,7 +247,7 @@ fig1.update_layout(showlegend=False,
 st.plotly_chart(fig1)
 
 
-# In[64]:
+# In[382]:
 
 
 st.markdown('**Tópico 4.2: Números de questões**')
@@ -263,7 +263,7 @@ fig1.update_layout(showlegend=True,
 st.plotly_chart(fig1)
 
 
-# In[65]:
+# In[383]:
 
 
 st.markdown('**Tópico 4.3: Engajamento médio dos alunos**')
@@ -279,7 +279,7 @@ fig1.update_layout(showlegend=False,
 st.plotly_chart(fig1)
 
 
-# In[66]:
+# In[384]:
 
 
 st.markdown('**Tópico 4.4: Tempo médio dos alunos**')
@@ -295,13 +295,13 @@ fig1.update_layout(showlegend=False,
 st.plotly_chart(fig1)
 
 
-# In[67]:
+# In[385]:
 
 
 st.subheader('**Capítulo 5: Dados brutos acerca dos cadernos (Produto Pedagógiqo)**')
 
 
-# In[68]:
+# In[386]:
 
 
 st.markdown('**Tópico 5.1: Número de cadernos criados**')
@@ -317,7 +317,7 @@ fig1.update_layout(showlegend=False,
 st.plotly_chart(fig1)
 
 
-# In[69]:
+# In[387]:
 
 
 st.markdown('**Tópico 5.2: Número de materiais nos cadernos**')
@@ -359,7 +359,7 @@ fig1.update_layout(showlegend=True,
 st.plotly_chart(fig1)
 
 
-# In[70]:
+# In[388]:
 
 
 st.markdown('**Tópico 5.3: Engajamento nos cadernos**')
@@ -401,128 +401,329 @@ fig1.update_yaxes(range=[0, 1])
 st.plotly_chart(fig1)
 
 
-# In[71]:
+# In[389]:
 
 
 st.subheader('**Capítulo 6: Benefícios QBR por namespace**')
 
 
-# In[72]:
+# In[390]:
 
 
 st.markdown('**Tópico 6.1: Benefício 1: Alunos engajados, no seu próprio ritmo e recebendo feedback em tempo real**')
 st.markdown('Item 6.1.1: Porcentagem de alunos ativos no período analisado')
 
 
-# In[73]:
+# In[391]:
 
 
 st.markdown('Item 6.1.2: Média de exercícios realizados por aluno por mês')
 
 
-# In[74]:
+# In[392]:
 
 
 st.markdown('Item 6.1.3: Média de conteúdos estudados por aluno por mês')
 
 
-# In[75]:
+# In[393]:
 
 
 st.markdown('**Tópico 6.2: Benefício 2: Professores que estão personalizando a aprendizagem**')
 st.markdown('Item 6.2.1: Porcentagem de professores ativos no período analisado')
 
 
-# In[76]:
+# In[394]:
 
 
 st.markdown('Item 6.2.2: Média de exercícios selecionados, curados ou criados por professor por mês')
 
 
-# In[77]:
+# In[395]:
 
 
 st.markdown('Item 6.2.3: Média de conteudos selecionados, curados ou criados por professor por mês')
 
 
-# In[78]:
+# In[396]:
 
 
 st.markdown('**Tópico 6.3: Benefício 3: Escola que analisa dados para personalização da aprendizagem**')
 st.markdown('Item 6.3.1: Porcentagem dos professores ativos que analisaram relatórios')
 
 
-# In[79]:
+# In[397]:
 
 
 st.markdown('Item 6.3.2: Média de relatórios analisados por professor por mês')
 
 
-# In[80]:
+# In[398]:
 
 
 st.markdown('**Tópico 6.4: Benefício 4: Escola que economiza tempo para dedicar ao mais importante: o aprendizado e crescimento dos seus alunos**')
 st.markdown('Item 6.4.1: Número de questões corrigidas automaticamente')
 
 
-# In[81]:
+# In[399]:
 
 
 st.markdown('Item 6.4.2: Número de folhas que deixaram de existir, dando menos trabalho para a sua escola')
 
 
-# In[82]:
+# In[400]:
 
 
 st.markdown('Item 6.4.3: Horas que foram economizados desde a troca de arquivos para impressão até o recolhimento de atividades e correção pelos professores')
 
 
-# In[83]:
+# In[401]:
 
 
 st.markdown('Item 6.4.4: Valor economizado com impressão e papel considerando 10 centavos por folha não impressa')
 
 
-# In[85]:
+# In[402]:
 
 
-beneficios_qbr2 = pd.read_excel('beneficios_qbr2.xlsx')
-
-beneficios_qbr3 = beneficios_qbr2.style.format({"Média":"{:,.2f}","Porcentagem de alunos ativos":"{:,.2f}","Média de exercícios realizados":"{:,.2f}","Média de conteúdos estudados":"{:,.2f}","Porcentagem de professores ativos":"{:,.2f}","Média de exercícios criados":"{:,.2f}","Média de conteúdos criados":"{:,.2f}","Porcentagem de professores que viram relatórios":"{:,.2f}","Média de relatórios vistos por professor":"{:,.2f}","Número de questões corrigidas automaticamente":"{:,.0f}","Número de folhas que deixaram de existir":"{:,.0f}","Horas que foram economizados":"{:,.2f}","Valor economizado com impressão e papel":"R$ {:,.2f}"}).background_gradient(cmap='Greens')
-
-st.dataframe(beneficios_qbr3)
-
-beneficios_qbr_normalizado3 = pd.read_excel('beneficios_qbr_normalizado3.xlsx')
-
-beneficios_qbr_normalizado4 = beneficios_qbr_normalizado3.style.format({"Média":"{:,.2f}","Porcentagem de alunos ativos":"{:,.2f}","Média de exercícios realizados":"{:,.2f}","Média de conteúdos estudados":"{:,.2f}","Porcentagem de professores ativos":"{:,.2f}","Média de exercícios criados":"{:,.2f}","Média de conteúdos criados":"{:,.2f}","Porcentagem de professores que viram relatórios":"{:,.2f}","Média de relatórios vistos por professor":"{:,.2f}","Número de questões corrigidas automaticamente":"{:,.0f}","Número de folhas que deixaram de existir":"{:,.0f}","Horas que foram economizados":"{:,.2f}","Valor economizado com impressão e papel":"R$ {:,.2f}"}).background_gradient(cmap='Greens')
-
-st.dataframe(beneficios_qbr_normalizado4)
-
-
-# In[87]:
-
-
-st.subheader('**Capítulo 7: Benefícios QBR por grupo em Redes**')
-
-
-# In[99]:
-
-
-st.markdown('**Tópico 7.1: Rede Inspira**')
-st.markdown('Item 7.1.1: Total')
+st.markdown('**Benefícios QBR: Resultados**')
 
 beneficios_rede = pd.read_excel('beneficios_rede.xlsx')
 beneficios_rede2 = beneficios_rede.drop(columns = ['Unnamed: 0'])
 
-select = st.sidebar.selectbox('Selecione uma rede',beneficios_rede2['Rede'].unique())
+# Filtro de redes
 
-beneficios_rede_filt1 = beneficios_rede2[beneficios_rede2['Rede'] == select]
+rede = pd.Series(['Rede'])
+lista_redes = pd.Series(beneficios_rede2['Rede'].unique()).sort_values()
+rede = rede.append(lista_redes).reset_index()
+rede2 = rede.drop(columns = ['index'])
 
-select2 = st.sidebar.selectbox('Selecione um grupo',beneficios_rede_filt1['grupo'].unique())
+select = st.sidebar.selectbox('Selecione uma rede',rede2)
 
-beneficios_rede_filt2 = beneficios_rede_filt1[beneficios_rede_filt1['grupo'] == select2]
+if select == 'Rede':
+    beneficios_rede_filt1 = beneficios_rede2
+else:
+    beneficios_rede_filt1 = beneficios_rede2[beneficios_rede2['Rede'] == select]
+ 
+# Filtro de grupos
 
-st.dataframe(beneficios_rede_filt2)
+grupo = pd.Series(['Grupo'])
+lista_grupos = pd.Series(beneficios_rede_filt1['grupo'].unique()).sort_values()
+grupo = grupo.append(lista_grupos).reset_index()
+grupo2 = grupo.drop(columns = ['index'])    
+    
+select2 = st.sidebar.selectbox('Selecione um grupo',grupo2)
 
-#select
+if select2 == 'Grupo':
+    beneficios_rede_filt2 = beneficios_rede_filt1
+else:
+    beneficios_rede_filt2 = beneficios_rede_filt1[beneficios_rede_filt1['grupo'] == select2]
+ 
+# Filtro de namespaces
+
+namespace = pd.Series(['Namespace'])
+lista_namespaces = pd.Series(beneficios_rede_filt2['namespace'].unique()).sort_values()
+namespace = namespace.append(lista_namespaces).reset_index()
+namespace2 = namespace.drop(columns = ['index'])    
+    
+select3 = st.sidebar.selectbox('Selecione um namespace',namespace2)
+
+if select3 == 'Namespace':
+    beneficios_rede_filt3 = beneficios_rede_filt2
+else:
+    beneficios_rede_filt3 = beneficios_rede_filt2[beneficios_rede_filt2['namespace'] == select3]
+    
+
+beneficios_rede_filt4 = beneficios_rede_filt3.replace(np.nan,'').reset_index()   
+beneficios_rede_filt4.rename(columns = {'Porcentagem de alunos ativos':'6.1.1','Média de exercícios realizados':'6.1.2','Média de conteúdos estudados':'6.1.3','Porcentagem de professores ativos':'6.2.1','Média de exercícios criados':'6.2.2','Média de conteúdos criados':'6.2.3','Porcentagem de professores que viram relatórios':'6.3.1','Média de relatórios vistos por professor':'6.3.2','Número de questões corrigidas automaticamente':'6.4.1','Número de folhas que deixaram de existir':'6.4.2','Horas que foram economizados':'6.4.3','Valor economizado com impressão e papel':'6.4.4'},inplace = True)
+beneficios_rede_filt5 = beneficios_rede_filt4.drop(columns = ['index']).sort_values(by = ['namespace']).reset_index()  
+beneficios_rede_filt6 = beneficios_rede_filt5.drop(columns = ['index'])
+numeric_col_mask = beneficios_rede_filt6.dtypes.apply(lambda d: issubclass(np.dtype(d).type, np.number))
+
+d = dict(selector="th", props=[('text-align', 'center')])
+
+beneficios_rede_filt7 = beneficios_rede_filt6.style.format({"Média":"{:,.2f}","6.1.1":"{:,.2f}","6.1.2":"{:,.2f}","6.1.3":"{:,.2f}","6.2.1":"{:,.2f}","6.2.2":"{:,.2f}","6.2.3":"{:,.2f}","6.3.1":"{:,.2f}","6.3.2":"{:,.2f}","6.4.1":"{:,.0f}","6.4.2":"{:,.0f}","6.4.3":"{:,.2f}","6.4.4":"R$ {:,.2f}"}).background_gradient(cmap='Blues')                                                    .set_properties(subset=beneficios_rede_filt6.columns[~numeric_col_mask], # right-align the numeric columns and set their width
+                                                    **{'width':'10em', 'text-align':'left'})\
+                                                    .set_properties(subset=beneficios_rede_filt6.columns[numeric_col_mask], # right-align the numeric columns and set their width
+                                                    **{'width':'10em', 'text-align':'center'})
+                                                    
+
+st.dataframe(beneficios_rede_filt7)
+             
+#beneficios_rede_filt7
+
+
+# In[403]:
+
+
+st.markdown('**Benefícios QBR: Resultados normalizados pela média**')
+
+beneficios_rede = pd.read_excel('beneficios_rede_normalizado.xlsx')
+beneficios_rede2 = beneficios_rede.drop(columns = ['Unnamed: 0'])
+
+# Filtro de redes
+
+rede = pd.Series(['Rede'])
+lista_redes = pd.Series(beneficios_rede2['Rede'].unique()).sort_values()
+rede = rede.append(lista_redes).reset_index()
+rede2 = rede.drop(columns = ['index'])
+
+if select == 'Rede':
+    beneficios_rede_filt1 = beneficios_rede2
+else:
+    beneficios_rede_filt1 = beneficios_rede2[beneficios_rede2['Rede'] == select]
+ 
+# Filtro de grupos
+
+grupo = pd.Series(['Grupo'])
+lista_grupos = pd.Series(beneficios_rede_filt1['grupo'].unique()).sort_values()
+grupo = grupo.append(lista_grupos).reset_index()
+grupo2 = grupo.drop(columns = ['index'])    
+
+if select2 == 'Grupo':
+    beneficios_rede_filt2 = beneficios_rede_filt1
+else:
+    beneficios_rede_filt2 = beneficios_rede_filt1[beneficios_rede_filt1['grupo'] == select2]
+ 
+# Filtro de namespaces
+
+namespace = pd.Series(['Namespace'])
+lista_namespaces = pd.Series(beneficios_rede_filt2['namespace'].unique()).sort_values()
+namespace = namespace.append(lista_namespaces).reset_index()
+namespace2 = namespace.drop(columns = ['index'])    
+
+if select3 == 'Namespace':
+    beneficios_rede_filt3 = beneficios_rede_filt2
+else:
+    beneficios_rede_filt3 = beneficios_rede_filt2[beneficios_rede_filt2['namespace'] == select3]
+    
+
+beneficios_rede_filt4 = beneficios_rede_filt3.replace(np.nan,'').reset_index()   
+beneficios_rede_filt4.rename(columns = {'Porcentagem de alunos ativos':'6.1.1','Média de exercícios realizados':'6.1.2','Média de conteúdos estudados':'6.1.3','Porcentagem de professores ativos':'6.2.1','Média de exercícios criados':'6.2.2','Média de conteúdos criados':'6.2.3','Porcentagem de professores que viram relatórios':'6.3.1','Média de relatórios vistos por professor':'6.3.2','Número de questões corrigidas automaticamente':'6.4.1','Número de folhas que deixaram de existir':'6.4.2','Horas que foram economizados':'6.4.3','Valor economizado com impressão e papel':'6.4.4'},inplace = True)
+beneficios_rede_filt5_ = beneficios_rede_filt4.drop(columns = ['index']).sort_values(by = 'Média', ascending = False)
+
+
+numeric_col_mask = beneficios_rede_filt5_.dtypes.apply(lambda d: issubclass(np.dtype(d).type, np.number))
+
+d = dict(selector="th", props=[('text-align', 'center')])
+
+beneficios_rede_filt6_ = beneficios_rede_filt5_.style.format({"Média":"{:,.2f}","6.1.1":"{:,.2f}","6.1.2":"{:,.2f}","6.1.3":"{:,.2f}","6.2.1":"{:,.2f}","6.2.2":"{:,.2f}","6.2.3":"{:,.2f}","6.3.1":"{:,.2f}","6.3.2":"{:,.2f}","6.4.1":"{:,.0f}","6.4.2":"{:,.0f}","6.4.3":"{:,.2f}","6.4.4":"R$ {:,.2f}"}).background_gradient(cmap='Blues')                                                    .set_properties(subset=beneficios_rede_filt5_.columns[~numeric_col_mask], # right-align the numeric columns and set their width
+                                                    **{'width':'10em', 'text-align':'left'})\
+                                                    .set_properties(subset=beneficios_rede_filt5_.columns[numeric_col_mask], # right-align the numeric columns and set their width
+                                                    **{'width':'10em', 'text-align':'center'})
+                                                    
+
+st.dataframe(beneficios_rede_filt6_)
+             
+#beneficios_rede_filt6
+
+
+# In[404]:
+
+
+st.subheader('**Capítulo 7: Benefícios QBR em Redes**')
+
+
+# In[405]:
+
+
+st.markdown('**Tópico 7.1: Redes**')
+
+beneficios_rede_total = beneficios_rede_filt6.reset_index().groupby('Rede').agg(C611 = ('6.1.1','mean'),
+                                                                                C612 = ('6.1.2','sum'),
+                                                                                C613 = ('6.1.3','sum'),
+                                                                                C621 = ('6.2.1','mean'),
+                                                                                C622 = ('6.2.2','sum'),
+                                                                                C623 = ('6.2.3','sum'),
+                                                                                C631 = ('6.3.1','mean'),
+                                                                                C632 = ('6.3.2','sum'),
+                                                                                C641 = ('6.4.1','sum'),
+                                                                                C642 = ('6.4.2','sum'),
+                                                                                C643 = ('6.4.3','sum'),
+                                                                                C644 = ('6.4.4','sum'))
+beneficios_rede_total = beneficios_rede_total.reset_index()
+#beneficios_rede_total
+
+beneficios_rede_total.rename(columns = {'C611':'6.1.1','C612':'6.1.2','C613':'6.1.3','C621':'6.2.1','C622':'6.2.2','C623':'6.2.3','C631':'6.3.1','C632':'6.3.2','C641':'6.4.1','C642':'6.4.2','C643':'6.4.3','C644':'6.4.4'},inplace = True)
+
+# Filtro de redes
+
+rede = pd.Series(['Rede'])
+lista_redes = pd.Series(beneficios_rede_total['Rede'].unique()).sort_values()
+rede = rede.append(lista_redes).reset_index()
+rede2 = rede.drop(columns = ['index'])
+
+if select == 'Rede':
+    beneficios_rede_total2 = beneficios_rede_total
+else:
+    beneficios_rede_total2 = beneficios_rede_total[beneficios_rede_total['Rede'] == select]
+
+beneficios_rede_total3 = beneficios_rede_total2[beneficios_rede_total2['Rede'] != '']
+    
+numeric_col_mask = beneficios_rede_total3.dtypes.apply(lambda d: issubclass(np.dtype(d).type, np.number))    
+    
+beneficios_rede_total4 = beneficios_rede_total3.style.format({"Média":"{:,.2f}","6.1.1":"{:,.2f}","6.1.2":"{:,.2f}","6.1.3":"{:,.2f}","6.2.1":"{:,.2f}","6.2.2":"{:,.2f}","6.2.3":"{:,.2f}","6.3.1":"{:,.2f}","6.3.2":"{:,.2f}","6.4.1":"{:,.0f}","6.4.2":"{:,.0f}","6.4.3":"{:,.2f}","6.4.4":"R$ {:,.2f}"}).background_gradient(cmap='Blues')                                                    .set_properties(subset=beneficios_rede_total3.columns[~numeric_col_mask], # right-align the numeric columns and set their width
+                                                    **{'width':'10em', 'text-align':'left'})\
+                                                    .set_properties(subset=beneficios_rede_total3.columns[numeric_col_mask], # right-align the numeric columns and set their width
+                                                    **{'width':'10em', 'text-align':'center'})
+
+st.dataframe(beneficios_rede_total4)
+
+
+# In[406]:
+
+
+st.markdown('**Tópico 7.2: Grupos**')
+
+beneficios_grupo_total = beneficios_rede_filt6.reset_index().groupby(['Rede','grupo']).agg(C611 = ('6.1.1','mean'),
+                                                                                C612 = ('6.1.2','sum'),
+                                                                                C613 = ('6.1.3','sum'),
+                                                                                C621 = ('6.2.1','mean'),
+                                                                                C622 = ('6.2.2','sum'),
+                                                                                C623 = ('6.2.3','sum'),
+                                                                                C631 = ('6.3.1','mean'),
+                                                                                C632 = ('6.3.2','sum'),
+                                                                                C641 = ('6.4.1','sum'),
+                                                                                C642 = ('6.4.2','sum'),
+                                                                                C643 = ('6.4.3','sum'),
+                                                                                C644 = ('6.4.4','sum'))
+beneficios_grupo_total = beneficios_grupo_total.reset_index()
+#beneficios_rede_total
+
+beneficios_grupo_total.rename(columns = {'C611':'6.1.1','C612':'6.1.2','C613':'6.1.3','C621':'6.2.1','C622':'6.2.2','C623':'6.2.3','C631':'6.3.1','C632':'6.3.2','C641':'6.4.1','C642':'6.4.2','C643':'6.4.3','C644':'6.4.4'},inplace = True)
+
+# Filtro de redes
+
+rede = pd.Series(['Rede'])
+lista_redes = pd.Series(beneficios_grupo_total['Rede'].unique()).sort_values()
+rede = rede.append(lista_redes).reset_index()
+rede2 = rede.drop(columns = ['index'])
+
+if select == 'Rede':
+    beneficios_grupo_total2 = beneficios_grupo_total
+else:
+    beneficios_grupo_total2 = beneficios_grupo_total[beneficios_grupo_total['Rede'] == select]
+ 
+# Filtro de grupos
+
+grupo = pd.Series(['Grupo'])
+lista_grupos = pd.Series(beneficios_grupo_total2['grupo'].unique()).sort_values()
+grupo = grupo.append(lista_grupos).reset_index()
+grupo2 = grupo.drop(columns = ['index'])    
+
+if select2 == 'Grupo':
+    beneficios_grupo_total3 = beneficios_grupo_total2
+else:
+    beneficios_grupo_total3 = beneficios_grupo_total2[beneficios_grupo_total2['grupo'] == select2]
+    
+beneficios_grupo_total4 = beneficios_grupo_total3[beneficios_grupo_total3['Rede'] != '']
+
+numeric_col_mask = beneficios_grupo_total4.dtypes.apply(lambda d: issubclass(np.dtype(d).type, np.number))    
+    
+beneficios_grupo_total5 = beneficios_grupo_total4.style.format({"Média":"{:,.2f}","6.1.1":"{:,.2f}","6.1.2":"{:,.2f}","6.1.3":"{:,.2f}","6.2.1":"{:,.2f}","6.2.2":"{:,.2f}","6.2.3":"{:,.2f}","6.3.1":"{:,.2f}","6.3.2":"{:,.2f}","6.4.1":"{:,.0f}","6.4.2":"{:,.0f}","6.4.3":"{:,.2f}","6.4.4":"R$ {:,.2f}"}).background_gradient(cmap='Blues')                                                    .set_properties(subset=beneficios_grupo_total4.columns[~numeric_col_mask], # right-align the numeric columns and set their width
+                                                    **{'width':'10em', 'text-align':'left'})\
+                                                    .set_properties(subset=beneficios_grupo_total4.columns[numeric_col_mask], # right-align the numeric columns and set their width
+                                                    **{'width':'10em', 'text-align':'center'})
+
+st.dataframe(beneficios_grupo_total5)
 
