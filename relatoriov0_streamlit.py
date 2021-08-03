@@ -16,7 +16,7 @@ from PIL import Image
 import plotly.express as px
 
 
-# In[47]:
+# In[102]:
 
 
 st.image('[LOGO] Eduqo.png')
@@ -27,6 +27,8 @@ image = Image.open('[LOGO] Eduqo.png')
 st.sidebar.image(image,caption='Eduqo - Plataforma QMágico',use_column_width=True)
 
 st.sidebar.markdown('Feito por : Alexandre Fernandes (Padre)')
+
+st.sidebar.write('[Capítulo 1](https://share.streamlit.io/alexandre-padre/relatorio-v0/main/relatoriov0_streamlit.py#cap-tulo-1)')
 
 
 # In[48]:
