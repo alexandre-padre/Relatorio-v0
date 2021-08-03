@@ -852,21 +852,21 @@ beneficio1_exercicios_realizados = pd.read_excel('beneficio1_exercicios_realizad
 #beneficio1_exercicios_realizados
 
 
-# In[52]:
+# In[84]:
 
 
 beneficio1_exercicios_realizados2 = beneficio1_exercicios_realizados.drop(columns = ['Segmento','Unnamed: 0','grupo','Rede'])
 #beneficio1_exercicios_realizados2
 
-beneficio1_exercicios_realizados3 = beneficio1_exercicios_realizados2.groupby(['namespace','user_id','Mês']).sum().reset_index()
+beneficio1_exercicios_realizados3 = beneficio1_exercicios_realizados2.groupby(['namespace','user_id']).sum().reset_index()
 #beneficio1_exercicios_realizados3
 
-beneficio1_exercicios_realizados4 = beneficio1_exercicios_realizados3.groupby(['namespace','Mês']).mean().reset_index()
+beneficio1_exercicios_realizados4 = beneficio1_exercicios_realizados3.groupby(['namespace']).mean().reset_index()
 beneficio1_exercicios_realizados4.rename(columns = {'sum':'Média de exercícios realizados'}, inplace = True)
 #beneficio1_exercicios_realizados4
 
 beneficio1_exercicios_realizados5 = beneficio1_exercicios_realizados4.groupby(['namespace']).mean().reset_index()
-#beneficio1_exercicios_realizados5
+beneficio1_exercicios_realizados5
 
 
 # In[53]:
