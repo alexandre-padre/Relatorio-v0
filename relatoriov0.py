@@ -807,23 +807,23 @@ fig1.update_yaxes(range=[0, 1])
 st.plotly_chart(fig1)
 
 
-# In[48]:
+# In[99]:
 
 
-st.subheader('**Capítulo 6: QBR**')
+st.subheader('**Capítulo 6: Benefícios QBR por namespace**')
 
 
-# In[49]:
+# In[112]:
 
 
-st.markdown('**Tópico 6.1.1: Benefício 1: Alunos engajados, no seu próprio ritmo e recebendo feedback em tempo real**')
-st.markdown('Porcentagem de alunos ativos no período analisado')
+st.markdown('**Tópico 6.1: Benefício 1: Alunos engajados, no seu próprio ritmo e recebendo feedback em tempo real**')
+st.markdown('Item 6.1.1: Porcentagem de alunos ativos no período analisado')
 
 beneficio1_alunos_ativos = pd.read_excel('beneficio1_alunos_ativos.xlsx')
 #beneficio1_alunos_ativos
 
 
-# In[50]:
+# In[113]:
 
 
 beneficio1_alunos_ativos2 = beneficio1_alunos_ativos.drop(columns = ['Segmento','Unnamed: 0','grupo','Rede'])
@@ -843,17 +843,17 @@ beneficio1_alunos_ativos6 = beneficio1_alunos_ativos5.drop(columns = ['Total de 
 #st.dataframe(beneficio1_alunos_ativos6)
 
 
-# In[51]:
+# In[114]:
 
 
-st.markdown('**Tópico 6.1.2: Benefício 1: Alunos engajados, no seu próprio ritmo e recebendo feedback em tempo real**')
-st.markdown('Média de exercícios realizados por aluno por mês')
+#st.markdown('**Tópico 6.1.2: Benefício 1: Alunos engajados, no seu próprio ritmo e recebendo feedback em tempo real**')
+st.markdown('Item 6.1.2: Média de exercícios realizados por aluno por mês')
 
 beneficio1_exercicios_realizados = pd.read_excel('beneficio1_exercicios_realizados.xlsx')
 #beneficio1_exercicios_realizados
 
 
-# In[85]:
+# In[115]:
 
 
 beneficio1_exercicios_realizados2 = beneficio1_exercicios_realizados.drop(columns = ['Segmento','Unnamed: 0','grupo','Rede'])
@@ -870,17 +870,17 @@ beneficio1_exercicios_realizados5 = beneficio1_exercicios_realizados4.groupby(['
 #beneficio1_exercicios_realizados5
 
 
-# In[91]:
+# In[116]:
 
 
-st.markdown('**Tópico 6.1.3: Benefício 1: Alunos engajados, no seu próprio ritmo e recebendo feedback em tempo real**')
-st.markdown('Média de conteúdos estudados por aluno por mês')
+#st.markdown('**Tópico 6.1.3: Benefício 1: Alunos engajados, no seu próprio ritmo e recebendo feedback em tempo real**')
+st.markdown('Item 6.1.3: Média de conteúdos estudados por aluno por mês')
 
 beneficio1_conteudos_estudados = pd.read_excel('beneficio1_conteudos_estudados.xlsx')
 #beneficio1_conteudos_estudados
 
 
-# In[88]:
+# In[117]:
 
 
 beneficio1_conteudos_estudados2 = beneficio1_conteudos_estudados.drop(columns = ['Segmento','Unnamed: 0','grupo','Rede'])
@@ -897,17 +897,17 @@ beneficio1_conteudos_estudados5 = beneficio1_conteudos_estudados4.groupby(['name
 #beneficio1_conteudos_estudados5
 
 
-# In[55]:
+# In[118]:
 
 
-st.markdown('**Tópico 6.2.1: Professores que estão personalizando a aprendizagem**')
-st.markdown('Porcentagem de professores ativos no período analisado')
+st.markdown('**Tópico 6.2: Benefício 2: Professores que estão personalizando a aprendizagem**')
+st.markdown('Item 6.2.1: Porcentagem de professores ativos no período analisado')
 
 beneficio2_professores_ativos = pd.read_excel('beneficio2_professores_ativos.xlsx')
 #beneficio2_professores_ativos
 
 
-# In[95]:
+# In[119]:
 
 
 beneficio2_professores_ativos2 = beneficio2_professores_ativos.drop(columns = ['Unnamed: 0','grupo','Rede'])
@@ -923,21 +923,21 @@ beneficio2_professores_ativos5.rename(columns = {'namespace':'Namespace'}, inpla
 #beneficio2_professores_ativos5
 
 beneficio2_professores_ativos6 = beneficio2_professores_ativos5.drop(columns = ['Total de professores','Professores presentes'])
-beneficio2_professores_ativos3.dtypes
+#beneficio2_professores_ativos3.dtypes
 #st.dataframe(beneficio2_professores_ativos6)
 
 
-# In[57]:
+# In[120]:
 
 
-st.markdown('**Tópico 6.2.2: Professores que estão personalizando a aprendizagem**')
-st.markdown('Média de exercícios selecionados, curados ou criados por professor por mês')
+#st.markdown('**Tópico 6.2.2: Professores que estão personalizando a aprendizagem**')
+st.markdown('Item 6.2.2: Média de exercícios selecionados, curados ou criados por professor por mês')
 
 beneficio2_exercicios_criados = pd.read_excel('beneficio2_exercicios_criados.xlsx')
 #beneficio2_exercicios_criados
 
 
-# In[58]:
+# In[121]:
 
 
 beneficio2_exercicios_criados2 = beneficio2_exercicios_criados.drop(columns = ['id','id_conteudo','Unnamed: 0','grupo','Rede','kind'])
@@ -954,17 +954,17 @@ beneficio2_exercicios_criados5 = beneficio2_exercicios_criados4.groupby(['namesp
 #beneficio2_exercicios_criados5
 
 
-# In[59]:
+# In[122]:
 
 
-st.markdown('**Tópico 6.2.3: Professores que estão personalizando a aprendizagem**')
-st.markdown('Média de conteudos selecionados, curados ou criados por professor por mês')
+#st.markdown('**Tópico 6.2.3: Professores que estão personalizando a aprendizagem**')
+st.markdown('Item 6.2.3: Média de conteudos selecionados, curados ou criados por professor por mês')
 
 beneficio2_conteudos_criados = pd.read_excel('beneficio2_conteudos_criados.xlsx')
 #beneficio2_conteudos_criados
 
 
-# In[60]:
+# In[123]:
 
 
 beneficio2_conteudos_criados2 = beneficio2_conteudos_criados.drop(columns = ['id_conteudo','Unnamed: 0','grupo','Rede','kind'])
@@ -981,11 +981,11 @@ beneficio2_conteudos_criados5 = beneficio2_conteudos_criados4.groupby(['namespac
 #beneficio2_conteudos_criados5
 
 
-# In[61]:
+# In[124]:
 
 
-st.markdown('**Tópico 6.3.1: Escola que analisa dados para personalização da aprendizagem**')
-st.markdown('Porcentagem dos professores ativos que analisaram relatórios')
+st.markdown('**Tópico 6.3: Benefício 3: Escola que analisa dados para personalização da aprendizagem**')
+st.markdown('Item 6.3.1: Porcentagem dos professores ativos que analisaram relatórios')
 
 beneficio3_professores_relatorios = pd.read_excel('beneficio3_professores_relatorios.xlsx')
 #beneficio3_professores_relatorios
@@ -994,7 +994,7 @@ beneficio3_professores = pd.read_excel('beneficio3_professores.xlsx')
 #beneficio3_professores
 
 
-# In[62]:
+# In[125]:
 
 
 beneficio3_professores_relatorios2 = beneficio3_professores_relatorios.drop(columns = ['Unnamed: 0','grupo','Rede','type'])
@@ -1017,14 +1017,14 @@ beneficio3_professores_uniao4 = beneficio3_professores_uniao3.sort_values(by = '
 #beneficio3_professores_uniao4
 
 
-# In[63]:
+# In[126]:
 
 
-st.markdown('**Tópico 6.3.2: Escola que analisa dados para personalização da aprendizagem**')
-st.markdown('Média de relatórios analisados por professor por mês')
+#st.markdown('**Tópico 6.3.2: Escola que analisa dados para personalização da aprendizagem**')
+st.markdown('Item 6.3.2: Média de relatórios analisados por professor por mês')
 
 
-# In[64]:
+# In[127]:
 
 
 beneficio3_professores_relatorios5 = beneficio3_professores_relatorios.drop(columns = ['Rede','grupo','Unnamed: 0'])
@@ -1038,17 +1038,17 @@ beneficio3_professores_relatorios7.rename(columns = {'type':'Média de relatóri
 #beneficio3_professores_relatorios7
 
 
-# In[65]:
+# In[128]:
 
 
-st.markdown('**Tópico 6.4.1: Escola que economiza tempo para dedicar ao mais importante: o aprendizado e crescimento dos seus alunos**')
-st.markdown('Número de questões corrigidas automaticamente')
+st.markdown('**Tópico 6.4: Benefício 4: Escola que economiza tempo para dedicar ao mais importante: o aprendizado e crescimento dos seus alunos**')
+st.markdown('Item 6.4.1: Número de questões corrigidas automaticamente')
 
 beneficio4_correcao_automatica = pd.read_excel('beneficio4_correcao_automatica.xlsx')
 #beneficio4_correcao_automatica
 
 
-# In[66]:
+# In[129]:
 
 
 beneficio4_correcao_automatica2 = beneficio4_correcao_automatica.drop(columns = ['Unnamed: 0','Rede','grupo','content_id'])
@@ -1059,11 +1059,11 @@ beneficio4_correcao_automatica3.rename(columns = {'Questões':'Nº de questões 
 #beneficio4_correcao_automatica3
 
 
-# In[67]:
+# In[130]:
 
 
-st.markdown('**Tópico 6.4.2: Escola que economiza tempo para dedicar ao mais importante: o aprendizado e crescimento dos seus alunos**')
-st.markdown('Número de folhas que deixaram de existir, dando menos trabalho para a sua escola')
+#st.markdown('**Tópico 6.4.2: Escola que economiza tempo para dedicar ao mais importante: o aprendizado e crescimento dos seus alunos**')
+st.markdown('Item 6.4.2: Número de folhas que deixaram de existir, dando menos trabalho para a sua escola')
 
 beneficio4_folhas_economizadas_pdf = pd.read_excel('beneficio4_folhas_economizadas_pdf.xlsx')
 #beneficio4_folhas_economizadas_pdf
@@ -1075,7 +1075,7 @@ beneficio4_folhas_economizadas_ex = pd.read_excel('beneficio4_folhas_economizada
 #beneficio4_folhas_economizadas_ex
 
 
-# In[68]:
+# In[131]:
 
 
 beneficio4_folhas_economizadas_aux = beneficio4_folhas_economizadas_pdf.append(beneficio4_folhas_economizadas_doc)
@@ -1089,17 +1089,17 @@ beneficio4_folhas_economizadas4.rename(columns = {'Folhas':'Nº de folhas'}, inp
 #beneficio4_folhas_economizadas4
 
 
-# In[69]:
+# In[132]:
 
 
-st.markdown('**Tópico 6.4.3: Escola que economiza tempo para dedicar ao mais importante: o aprendizado e crescimento dos seus alunos**')
-st.markdown('Horas que foram economizados desde a troca de arquivos para impressão até o recolhimento de atividades e correção pelos professores')
+#st.markdown('**Tópico 6.4.3: Escola que economiza tempo para dedicar ao mais importante: o aprendizado e crescimento dos seus alunos**')
+st.markdown('Item 6.4.3: Horas que foram economizados desde a troca de arquivos para impressão até o recolhimento de atividades e correção pelos professores')
 
 beneficio4_horas_economizadas = pd.read_excel('beneficio4_horas_economizadas.xlsx')
 #beneficio4_horas_economizadas
 
 
-# In[70]:
+# In[133]:
 
 
 beneficio4_horas_economizadas2 = beneficio4_horas_economizadas.drop(columns = ['Rede','grupo','Unnamed: 0'])
@@ -1116,17 +1116,17 @@ beneficio4_horas_economizadas5 = beneficio4_horas_economizadas4.drop(columns = [
 #beneficio4_horas_economizadas5
 
 
-# In[71]:
+# In[134]:
 
 
-st.markdown('**Tópico 6.4.4: Escola que economiza tempo para dedicar ao mais importante: o aprendizado e crescimento dos seus alunos**')
-st.markdown('Valor economizado com impressão e papel considerando 10 centavos por folha não impressa')
+#st.markdown('**Tópico 6.4.4: Escola que economiza tempo para dedicar ao mais importante: o aprendizado e crescimento dos seus alunos**')
+st.markdown('Item 6.4.4: Valor economizado com impressão e papel considerando 10 centavos por folha não impressa')
 
 beneficio4_valor_economizado = pd.read_excel('beneficio4_valor_economizado.xlsx')
 #beneficio4_valor_economizado
 
 
-# In[72]:
+# In[135]:
 
 
 beneficio4_valor_economizado2 = beneficio4_valor_economizado.drop(columns = ['Rede','grupo','Unnamed: 0'])
@@ -1141,7 +1141,7 @@ beneficio4_valor_economizado5 = beneficio4_valor_economizado4.drop(columns = ['c
 #beneficio4_valor_economizado5
 
 
-# In[73]:
+# In[136]:
 
 
 beneficio1_alunos_ativos6.rename(columns = {'Namespace':'namespace'}, inplace = True)
@@ -1204,8 +1204,33 @@ beneficios_qbr_normalizado3 = beneficios_qbr_normalizado2.fillna(0)
 #beneficios_qbr_normalizado3
 
 beneficios_qbr_normalizado4 = beneficios_qbr_normalizado3.style.format({"Média":"{:,.2f}","Porcentagem de alunos ativos":"{:,.2f}","Média de exercícios realizados":"{:,.2f}","Média de conteúdos estudados":"{:,.2f}","Porcentagem de professores ativos":"{:,.2f}","Média de exercícios criados":"{:,.2f}","Média de conteúdos criados":"{:,.2f}","Porcentagem de professores que viram relatórios":"{:,.2f}","Média de relatórios vistos por professor":"{:,.2f}","Número de questões corrigidas automaticamente":"{:,.0f}","Número de folhas que deixaram de existir":"{:,.0f}","Horas que foram economizados":"{:,.2f}","Valor economizado com impressão e papel":"R$ {:,.2f}"}).background_gradient(cmap='Greens')
-#beneficios_qbr_normalizado3
+
 st.dataframe(beneficios_qbr_normalizado4)
 
-#beneficios_qbr3
+
+# In[137]:
+
+
+st.subheader('**Capítulo 7: Benefícios QBR por grupo em Redes**')
+
+lista_namespaces = pd.read_excel('lista_namespaces.xlsx')
+#lista_namespaces
+
+
+# In[149]:
+
+
+lista_namespaces2 = lista_namespaces.drop(columns = ['Unnamed: 0'])
+
+beneficios_rede = pd.merge(lista_namespaces2,beneficios_qbr2, on = 'namespace',how = 'inner')
+#beneficios_rede
+
+st.markdown('**Tópico 7.1: Rede Inspira**')
+st.markdown('Item 7.1.1: Total')
+
+select = st.selectbox('Selecione uma rede',beneficios_rede['Rede'].unique())
+
+beneficios_rede_filt = beneficios_rede[beneficios_rede['Rede'] == select]
+
+st.dataframe(beneficios_rede_filt)
 
