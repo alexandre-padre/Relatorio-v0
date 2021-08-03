@@ -2,3 +2,4 @@ pandas==1.2.4
 plotly==4.14.3
 streamlit==0.80.0
 openpyxl
+matplotlib @ file:///C:/ci/matplotlib-suite_1613408055530/work
