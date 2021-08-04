@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[407]:
+# In[450]:
 
 
 # imports e definições
@@ -16,7 +16,7 @@ from PIL import Image
 import plotly.express as px
 
 
-# In[408]:
+# In[451]:
 
 
 st.image('[LOGO] Eduqo.png')
@@ -31,19 +31,19 @@ st.sidebar.markdown('Feito por : Alexandre Fernandes (Padre)')
 #st.sidebar.write('[Capítulo 1](https://share.streamlit.io/alexandre-padre/relatorio-v0/main/relatoriov0_streamlit.py#cap-tulo-1)')
 
 
-# In[409]:
+# In[452]:
 
 
 st.subheader('**Capítulo 1**')
 
 
-# In[410]:
+# In[453]:
 
 
 st.subheader('**Capítulo 2: Dados brutos acerca do tempo gasto pelos usuários ativos na plataforma**')
 
 
-# In[411]:
+# In[454]:
 
 
 st.markdown('**Tópico 2.1: Alunos**')
@@ -59,7 +59,7 @@ fig1.update_layout(showlegend=False,
 st.plotly_chart(fig1)
 
 
-# In[412]:
+# In[455]:
 
 
 st.markdown('**Tópico 2.2: Professores**')
@@ -75,7 +75,7 @@ fig1.update_layout(showlegend=False,
 st.plotly_chart(fig1)
 
 
-# In[413]:
+# In[456]:
 
 
 st.markdown('**Tópico 2.3: Administradores**')
@@ -91,13 +91,13 @@ fig1.update_layout(showlegend=False,
 st.plotly_chart(fig1)
 
 
-# In[414]:
+# In[457]:
 
 
 st.subheader('**Capítulo 3: Dados brutos acerca do Banco de Questões Eduqo (Produto Banqo)**')
 
 
-# In[415]:
+# In[458]:
 
 
 st.markdown('**Tópico 3.1: Número de questões**')
@@ -113,7 +113,7 @@ fig1.update_layout(showlegend=False,
 st.plotly_chart(fig1)
 
 
-# In[416]:
+# In[459]:
 
 
 st.markdown('**Tópico 3.2: Número de questões EM**')
@@ -129,7 +129,7 @@ fig1.update_layout(showlegend=False,
 st.plotly_chart(fig1)
 
 
-# In[417]:
+# In[460]:
 
 
 st.markdown('**Tópico 3.3: Número de questões EF2**')
@@ -145,7 +145,7 @@ fig1.update_layout(showlegend=False,
 st.plotly_chart(fig1)
 
 
-# In[418]:
+# In[461]:
 
 
 st.markdown('**Tópico 3.4: Número de questões EF1**')
@@ -161,7 +161,7 @@ fig1.update_layout(showlegend=False,
 st.plotly_chart(fig1)
 
 
-# In[419]:
+# In[462]:
 
 
 st.markdown('**Tópico 3.5: Número de questões BNCC**')
@@ -177,7 +177,7 @@ fig1.update_layout(showlegend=False,
 st.plotly_chart(fig1)
 
 
-# In[420]:
+# In[463]:
 
 
 st.markdown('**Tópico 3.6: Número de questões por disciplina**')
@@ -193,7 +193,7 @@ fig1.update_layout(showlegend=False,
 st.plotly_chart(fig1)
 
 
-# In[421]:
+# In[464]:
 
 
 st.markdown('**Tópico 3.7: Número de questões por fonte**')
@@ -209,7 +209,7 @@ fig1.update_layout(showlegend=False,
 st.plotly_chart(fig1)
 
 
-# In[422]:
+# In[465]:
 
 
 st.markdown('**Tópico 3.8: Número de tags por questão**')
@@ -225,13 +225,13 @@ fig1.update_layout(showlegend=False,
 st.plotly_chart(fig1)
 
 
-# In[423]:
+# In[466]:
 
 
 st.subheader('**Capítulo 4: Dados brutos acerca das Avaliações (Produto Diagnóstiqo)**')
 
 
-# In[424]:
+# In[467]:
 
 
 st.markdown('**Tópico 4.1: Números de avaliações criadas**')
@@ -247,7 +247,7 @@ fig1.update_layout(showlegend=False,
 st.plotly_chart(fig1)
 
 
-# In[425]:
+# In[468]:
 
 
 st.markdown('**Tópico 4.2: Números de questões**')
@@ -263,7 +263,7 @@ fig1.update_layout(showlegend=True,
 st.plotly_chart(fig1)
 
 
-# In[426]:
+# In[469]:
 
 
 st.markdown('**Tópico 4.3: Engajamento médio dos alunos**')
@@ -279,7 +279,7 @@ fig1.update_layout(showlegend=False,
 st.plotly_chart(fig1)
 
 
-# In[427]:
+# In[470]:
 
 
 st.markdown('**Tópico 4.4: Tempo médio dos alunos**')
@@ -295,13 +295,13 @@ fig1.update_layout(showlegend=False,
 st.plotly_chart(fig1)
 
 
-# In[428]:
+# In[471]:
 
 
 st.subheader('**Capítulo 5: Dados brutos acerca dos cadernos (Produto Pedagógiqo)**')
 
 
-# In[429]:
+# In[472]:
 
 
 st.markdown('**Tópico 5.1: Número de cadernos criados**')
@@ -317,7 +317,7 @@ fig1.update_layout(showlegend=False,
 st.plotly_chart(fig1)
 
 
-# In[430]:
+# In[473]:
 
 
 st.markdown('**Tópico 5.2: Número de materiais nos cadernos**')
@@ -359,7 +359,7 @@ fig1.update_layout(showlegend=True,
 st.plotly_chart(fig1)
 
 
-# In[431]:
+# In[474]:
 
 
 st.markdown('**Tópico 5.3: Engajamento nos cadernos**')
@@ -401,89 +401,89 @@ fig1.update_yaxes(range=[0, 1])
 st.plotly_chart(fig1)
 
 
-# In[432]:
+# In[475]:
 
 
 st.subheader('**Capítulo 6: Benefícios QBR por namespace**')
 
 
-# In[433]:
+# In[476]:
 
 
 st.markdown('**Tópico 6.1: Benefício 1: Alunos engajados, no seu próprio ritmo e recebendo feedback em tempo real**')
 st.markdown('Item 6.1.1: Porcentagem de alunos ativos no período analisado')
 
 
-# In[434]:
+# In[477]:
 
 
 st.markdown('Item 6.1.2: Média de exercícios realizados por aluno por mês')
 
 
-# In[435]:
+# In[478]:
 
 
 st.markdown('Item 6.1.3: Média de conteúdos estudados por aluno por mês')
 
 
-# In[436]:
+# In[479]:
 
 
 st.markdown('**Tópico 6.2: Benefício 2: Professores que estão personalizando a aprendizagem**')
 st.markdown('Item 6.2.1: Porcentagem de professores ativos no período analisado')
 
 
-# In[437]:
+# In[480]:
 
 
 st.markdown('Item 6.2.2: Média de exercícios selecionados, curados ou criados por professor por mês')
 
 
-# In[438]:
+# In[481]:
 
 
 st.markdown('Item 6.2.3: Média de conteudos selecionados, curados ou criados por professor por mês')
 
 
-# In[439]:
+# In[482]:
 
 
 st.markdown('**Tópico 6.3: Benefício 3: Escola que analisa dados para personalização da aprendizagem**')
 st.markdown('Item 6.3.1: Porcentagem dos professores ativos que analisaram relatórios')
 
 
-# In[440]:
+# In[483]:
 
 
 st.markdown('Item 6.3.2: Média de relatórios analisados por professor por mês')
 
 
-# In[441]:
+# In[484]:
 
 
 st.markdown('**Tópico 6.4: Benefício 4: Escola que economiza tempo para dedicar ao mais importante: o aprendizado e crescimento dos seus alunos**')
 st.markdown('Item 6.4.1: Número de questões corrigidas automaticamente')
 
 
-# In[442]:
+# In[485]:
 
 
 st.markdown('Item 6.4.2: Número de folhas que deixaram de existir, dando menos trabalho para a sua escola')
 
 
-# In[443]:
+# In[486]:
 
 
 st.markdown('Item 6.4.3: Horas que foram economizados desde a troca de arquivos para impressão até o recolhimento de atividades e correção pelos professores')
 
 
-# In[444]:
+# In[487]:
 
 
 st.markdown('Item 6.4.4: Valor economizado com impressão e papel considerando 10 centavos por folha não impressa')
 
 
-# In[445]:
+# In[488]:
 
 
 st.markdown('**Benefícios QBR: Resultados**')
@@ -553,7 +553,7 @@ st.dataframe(beneficios_rede_filt7)
 #beneficios_rede_filt7
 
 
-# In[446]:
+# In[489]:
 
 
 st.markdown('**Benefícios QBR: Resultados normalizados pela média**')
@@ -618,13 +618,13 @@ st.dataframe(beneficios_rede_filt6_)
 #beneficios_rede_filt6
 
 
-# In[447]:
+# In[490]:
 
 
 st.subheader('**Capítulo 7: Benefícios QBR em Redes**')
 
 
-# In[448]:
+# In[491]:
 
 
 st.markdown('**Tópico 7.1: Redes**')
@@ -670,7 +670,7 @@ beneficios_rede_total4 = beneficios_rede_total3.style.format({"Média":"{:,.2f}"
 st.dataframe(beneficios_rede_total4)
 
 
-# In[449]:
+# In[492]:
 
 
 st.markdown('**Tópico 7.2: Grupos**')
